@@ -9,8 +9,8 @@ function computerPlay(){
 // Logs the computer's hand
 console.log("AI: " + computerPlay());
 
-// Init static player hand & Logs it
-let playerSelection = "rock";
+// Init player hand & Logs it (Also converts for easy comparisons)
+let playerSelection;
 console.log("You: " + playerSelection)
 
 // Computer's hand is set as the parameter
@@ -43,7 +43,27 @@ function playRound(playerSelection, computerSelection) {
         }
     } 
 }
+
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++){
+        playerSelection = prompt("Choose rock, paper, or scissors: ").toLowerCase();
+        console.log(playerSelection);
+       
+        let winner = playRound(playerSelection, computerSelection);
+        console.log(winner);
+        alert(winner); 
+
+        }
+
+        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+}
+
+game();
 playRound(playerSelection, computerSelection);
 computerPlay();
-// Log Result --- Random results (works, but doesn't work; logic error)
+// Log Result 
 console.log(playRound(playerSelection, computerSelection));
